@@ -1,0 +1,123 @@
+
+
+======| Existem 4 estágios em que um arquivo pode estar quando faz parte de um projeto:
+
+ | Untracked | Tracked | Modified | Staged |
+
+	---> Untracked: (não rastreado), o arquivo ainda não estão sendo monitorados pelo git ou quando o projeto tem alguns arquivos, mas o git ainda não controla esses arquivos
+
+	---> Tracked: a partir desse momento os arquivos estão controlando esses arquivos também são conhecidos como "new file"
+
+	---> Modified: quando modificamos um arquivo que está sendo rastreado pelo git e ele detectou que o arquivo foi modificado, nessa etapa podem ocorrer erros/conflitos, se 2 pessoas alteraram o mesmo arquivo, deve-se fazer "merge"
+
+	---> Staged (preparado): quando o arquivo já foi rastreado, modificado, finalizado e está pronto pra ser enviado para o repositório através de commits
+
+
+
+======|	Ciclo
+
+	---> Ao iniciar "git init" entra no "Untracked"
+
+	---> Ao realizar "git add" entra no "tracked" e o git está monitorando ESSE arquivo
+
+	---> Ao modificar o arquivo ele entrar no "modified", precisa fazer "add"
+		Para o arquivo ser transferido para o "Staged" é obrigatório que o arquivo esteja no "tracked"
+
+		---> Se o arquivo estiver no estágio "tracked" ele pode ser commitado "git commit -m" para entrar no "staged"
+
+		---> Estando no estágio "Staged" ele pode ser transmitido para o repositório remoto
+	
+		---> Git é descentralizado, a própria máquina local é um repositório
+
+
+
+======| 
+
+	---> 
+
+	---> 
+
+	---> 
+
+	---> 
+
+	---> 
+
+	---> 
+
+	---> 
+
+	---> 
+
+	---> 
+
+	---> 
+
+	---> 
+
+	---> 
+
+
+
+
+======|
+
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+
+======|
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+
+======|
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+
+======|
+
+======|
+
+======|
+
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
+---> 
