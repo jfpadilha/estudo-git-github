@@ -1,6 +1,7 @@
 # Dir and others
 resources/
-secao03/
+secao03/.git/
+secao03/*.git/
 
 # Compiled class file
 *.class

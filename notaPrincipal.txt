@@ -31,9 +31,27 @@
 
 
 
-======| 
+======| Para ignorar arquivos recursivamente:
 
-	---> 
+	---> Colocar no arquivo .gitignore da seguinte forma:
+		- **file/
+			(vai ignorar a pasta "file" tanto na pasta atual quanto recursivamente)
+
+======| Para definir a pessoa gerenciadora da pasta
+
+	$ git config user.name "nome da pessoa"
+	$ git config user.email "email@gmail.com"
+
+
+======| Para definir configurações do user para tudo (global)
+	$ git config user.name "nome da pessoa"
+	$ git config user.email "email@gmail.com"
+
+
+======|
+
+======|
+
 
 	---> 
 
