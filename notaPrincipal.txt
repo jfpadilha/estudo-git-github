@@ -54,10 +54,38 @@
 
 
 
+======| Ao fazer "git add ."
+	- se fazer  "git add" e alterar algum arquivo do repositório local
+	- na sequencia gerar commit
+	- vai subir no commit
+
+
+======| Localizando commitos
+	- $ git log	<vai mostrar uma lista enorme dos commits
+	- vai mostra abaixo o ":"
+	- nesse momento pressionar / + 'nome de busca' Ex.: /code.html
+	- ele vai buscar o commit onde tem o arquivo "code.html"
+
+======| Alterar comportamento ao mostrar a lista no "git log"
+	- $ git config core.pager cat
+	- conferir arquivo ".git/config"
+
+	- a partir de agora não vai mostar mais o ":" e vai listar completamente
+
+
+======| Desfazer comportamento para mostrar a lista logs com ":" e busca
+	- $ git config core.pager less
+
 ======|
 
+======|
 
-	---> 
+======|
+
+======|
+
+======|
+
 
 	---> 
 
