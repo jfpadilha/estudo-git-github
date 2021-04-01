@@ -128,13 +128,24 @@
 ======| #23 - removendo arquivos
 	$ git rm arquivo.txt
 
+
 ======| #23 - Dica
 	"Faça pequenos commits!"
 
-======| #23 - checando a diferença entra um commit e outro
-	$ git diff
 
-======|
+======| #23 - checando a diferença entre arquivos no "staged"
+	$ git diff --staged
+
+
+======| #23 - checando a diferença entre o HEAD e algum outro commit antigo
+	$ git diff 3d9d4cb
+		- mostra  a diferença entre o HEAD até o commit 3d9d4cb (antigo)
+
+
+======| #23 - Checar a diferença entre o commit atual e um outro antigo
+	$ git diff 3d9d4cb..5a886ad
+		- checar a diferença entre o commit 'cb'(mais antigo) até 'ad' (mais novo)
+
 
 ======|
 
