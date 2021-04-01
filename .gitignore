@@ -2,6 +2,9 @@
 resources/
 secao03/.git/
 secao03/*.git/
+*.sublime-project
+*.sublime-workspace
+
 
 # Compiled class file
 *.class

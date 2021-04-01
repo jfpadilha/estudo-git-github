@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formatando links</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="">
+
+	<style type="text/css">
+
+		a{
+			padding: 5px 10px;
+			text-decoration: none; /*remover o underline*/
+		}
+		
+		/*Links não visitados & links visitados*/
+		a:link, a:visited{		/*aqui que configura o modo padrão do "a:link" pode-se colocar 2 estados em 1*/
+		color: #b9c941;
+	}
+
+
+	/*Links hover, quando passa o curso sobre o link*/
+	a:hover{
+		color: #fff;
+		background: #6d790f;
+		padding: 8px;
+	}
+
+	/*Links ativos, quando clicado*/
+	a:active{
+		color: #e4f371;
+	}
+
+
+
+</style>
+</head>
+
+<body>
+	<a href="https://www.google.com" target="_blank">Google</a> |
+	<a href="https://www.tecmundo.com.br" target="_blank">TecMundo</a> |
+	<a href="https://www.terra.com.br" target="_blank">Terra</a> | 
+	<a href="https://www.ibest.com.br" target="_blank">Ibest</a> | 
+
+</body>
+</html>

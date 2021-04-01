@@ -150,7 +150,11 @@
 ======| Corrigindo mensagem de commit
 	$ git commit --amend -m "Nova mensagem corrigida"
 
-======|
+
+======| Feito commit mas faltou criar ou adicionar um arquivo novo
+	- crie o arquivo
+	$ git add .
+	$ git commit --amend -m "Inserção de arquivo que faltou"
 
 ======|
 
