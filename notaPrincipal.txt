@@ -114,7 +114,8 @@
 	$ git checkout 4ff58d9
 		- volta no commit '4ff58d9'
 
-	
+	$ git checkout master 
+		- para voltar ao 'HEAD' mais alto
 
 ======|
 
