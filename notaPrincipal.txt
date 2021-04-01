@@ -121,7 +121,8 @@
 	$ git mv file1.txt file10.txt
 		- renomar arquivo de file1.txt para file10.txt
 
-======|
+======| # 23 - renomear arquivo diretamente pela pasta
+		- ele vai deletar o original e criar uma cópia com nome novo
 
 
 	---> 
