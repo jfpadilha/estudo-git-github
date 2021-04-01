@@ -117,7 +117,9 @@
 	$ git checkout master 
 		- para voltar ao 'HEAD' mais alto
 
-======|
+======| #23 - renomear arquivo
+	$ git mv file1.txt file10.txt
+		- renomar arquivo de file1.txt para file10.txt
 
 ======|
 
