@@ -147,8 +147,8 @@
 		- checar a diferença entre o commit 'cb'(mais antigo) até 'ad' (mais novo)
 
 
-======| #23 - arquivo no stage
-	 teste
+======| Corrigindo mensagem de commit
+	$ git commit --amend -m "Nova mensagem corrigida"
 
 ======|
 
