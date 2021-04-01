@@ -66,6 +66,7 @@
 	- nesse momento pressionar / + 'nome de busca' Ex.: /code.html
 	- ele vai buscar o commit onde tem o arquivo "code.html"
 
+
 ======| Alterar comportamento ao mostrar a lista no "git log"
 	- $ git config core.pager cat
 	- conferir arquivo ".git/config"
@@ -73,8 +74,10 @@
 	- a partir de agora não vai mostar mais o ":" e vai listar completamente
 
 
+
 ======| Desfazer comportamento para mostrar a lista logs com ":" e busca
 	- $ git config core.pager less
+
 
 ======| fazendo mais com comando "git log"
 
@@ -86,6 +89,8 @@
 
 	$ git log -3 --oneline 
 		- mostra os três últimos cada commit em uma linha
+
+
 
 ======| Pesquisando commits no "git log"
 
@@ -101,11 +106,15 @@
 	$ git log --before="1 month ago"
 		- mostra logs de 1 mês atras
 
+
+
+
+
+======| Voltando no tempo, visualizar tempo passado
+	$ git checkout 4ff58d9
+		- volta no commit '4ff58d9'
+
 	
-
-
-
-======|
 
 ======|
 
