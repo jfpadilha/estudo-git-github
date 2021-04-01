@@ -76,9 +76,34 @@
 ======| Desfazer comportamento para mostrar a lista logs com ":" e busca
 	- $ git config core.pager less
 
-======|
+======| fazendo mais com comando "git log"
 
-======|
+	$ git log -3
+		- mostra os três últimos logs
+
+	$ git log --oneline
+		- mostra cada log em uma linha também mostra o resumo do hash
+
+	$ git log -3 --oneline 
+		- mostra os três últimos cada commit em uma linha
+
+======| Pesquisando commits no "git log"
+
+	$ git log --before=2021-03-30
+		- mostra logs anterior a 30-03-2021
+
+	$ git log --after=2021-03-30
+		- mostra logs após 30-03-2021
+
+	$ git log --since="7 days ago"
+		- mostra os logs de 7 dias atras
+
+	$ git log --before="1 month ago"
+		- mostra logs de 1 mês atras
+
+	
+
+
 
 ======|
 
