@@ -1,0 +1,262 @@
+
+
+======| Existem 4 estágios em que um arquivo pode estar quando faz parte de um projeto:
+
+ | Untracked | Tracked | Modified | Staged |
+
+	---> Untracked: (não rastreado), o arquivo ainda não estão sendo monitorados pelo git ou quando o projeto tem alguns arquivos, mas o git ainda não controla esses arquivos, arquivo novo criado agora ou copiado agora
+
+	---> Tracked: a partir desse momento os arquivos estão controlando esses arquivos também são conhecidos como "new file"
+
+	---> Modified: quando modificamos um arquivo que está sendo rastreado pelo git e ele detectou que o arquivo foi modificado, nessa etapa podem ocorrer erros/conflitos, se 2 pessoas alteraram o mesmo arquivo, deve-se fazer "merge"
+
+	---> Staged (preparado): quando o arquivo já foi rastreado, modificado, finalizado e está pronto pra ser enviado para o repositório através de commits
+
+
+
+======|	Ciclo
+
+	---> Ao iniciar "git init" entra no "Untracked"
+
+	---> Ao realizar "git add" entra no "tracked" e o git está monitorando ESSE arquivo
+
+	---> Ao modificar o arquivo ele entrar no "modified", precisa fazer "add"
+		Para o arquivo ser transferido para o "Staged" é obrigatório que o arquivo esteja no "tracked"
+
+		---> Se o arquivo estiver no estágio "tracked" ele pode ser commitado "git commit -m" para entrar no "staged"
+
+		---> Estando no estágio "Staged" ele pode ser transmitido para o repositório remoto
+	
+		---> Git é descentralizado, a própria máquina local é um repositório
+
+
+
+======| Para ignorar arquivos recursivamente:
+
+	---> Colocar no arquivo .gitignore da seguinte forma:
+		- **file/
+			(vai ignorar a pasta "file" tanto na pasta atual quanto recursivamente)
+
+
+======| Para definir a pessoa gerenciadora da pasta
+	$ git config user.name "nome da pessoa"
+	$ git config user.email "email@gmail.com"
+
+
+======| Para definir configurações do user para tudo (global)
+	$ git config user.name "nome da pessoa"
+	$ git config user.email "email@gmail.com"
+
+
+======| Fazendo commit:
+	$ git add
+	$ git commit -m "mensagem do commit"
+
+
+
+======| Ao fazer "git add ."
+	- se fazer  "git add" e alterar algum arquivo do repositório local
+	- na sequencia gerar commit
+	- vai subir no commit
+
+
+======| Localizando commitos
+	- $ git log	<vai mostrar uma lista enorme dos commits
+	- vai mostra abaixo o ":"
+	- nesse momento pressionar / + 'nome de busca' Ex.: /code.html
+	- ele vai buscar o commit onde tem o arquivo "code.html"
+
+
+======| Alterar comportamento ao mostrar a lista no "git log"
+	- $ git config core.pager cat
+	- conferir arquivo ".git/config"
+
+	- a partir de agora não vai mostar mais o ":" e vai listar completamente
+
+
+
+======| Desfazer comportamento para mostrar a lista logs com ":" e busca
+	- $ git config core.pager less
+
+
+======| fazendo mais com comando "git log"
+
+	$ git log -3
+		- mostra os três últimos logs
+
+	$ git log --oneline
+		- mostra cada log em uma linha também mostra o resumo do hash
+
+	$ git log -3 --oneline 
+		- mostra os três últimos cada commit em uma linha
+
+
+
+======| Pesquisando commits no "git log"
+
+	$ git log --before=2021-03-30
+		- mostra logs anterior a 30-03-2021
+
+	$ git log --after=2021-03-30
+		- mostra logs após 30-03-2021
+
+	$ git log --since="7 days ago"
+		- mostra os logs de 7 dias atras
+
+	$ git log --before="1 month ago"
+		- mostra logs de 1 mês atras
+
+
+
+======| Voltando no tempo, visualizar tempo passado
+	$ git checkout 4ff58d9
+		- volta no commit '4ff58d9'
+
+	$ git checkout master 
+		- para voltar ao 'HEAD' mais alto
+
+
+======| #23 - renomear arquivo
+	$ git mv file1.txt file10.txt
+		- renomar arquivo de file1.txt para file10.txt
+
+
+======| #23 - renomear arquivo diretamente pela pasta
+	- ele vai deletar o original e criar uma cópia com nome novo
+
+
+======| #23 - removendo arquivos
+	$ git rm arquivo.txt
+
+
+======| #23 - Dica
+	"Faça pequenos commits!"
+
+
+======| #23 - checando a diferença entre arquivos no "staged"
+	$ git diff --staged
+
+
+======| #23 - checando a diferença entre o HEAD e algum outro commit antigo
+	$ git diff 3d9d4cb
+		- mostra  a diferença entre o HEAD até o commit 3d9d4cb (antigo)
+
+
+======| #23 - Checar a diferença entre o commit atual e um outro antigo
+	$ git diff 3d9d4cb..5a886ad
+		- checar a diferença entre o commit 'cb'(mais antigo) até 'ad' (mais novo)
+
+
+======| Corrigindo mensagem de commit
+	$ git commit --amend -m "Nova mensagem corrigida"
+
+
+======| Feito commit mas faltou criar ou adicionar um arquivo novo
+	- crie o arquivo
+	$ git add .
+	$ git commit --amend -m "Inserção de arquivo que faltou"
+
+
+======| #25 - tirando arquivos de staged
+	$ git restore --staged arquivo.txt
+	$ git restore --staged (desse modo vai retonar com todos os arquivos do staged)
+	- vai voltar o arquivo para 'tracked' ou 'untracked'
+
+
+======| #25 - feita uma alteração indevida em um arquivo pronto
+	$ git checkout arquivo.html
+		-- acessa o arquivo no último commit
+	$ git status 	(nota-se que os arquivos estão como antes)
+
+	- usar checkout arquivo por arquivo
+
+
+======| R$ Remover um commit que foi feito
+	$ git reset HEAD --hard
+		- head é o último estágio do commit
+		- então vai resetar todas as alterações e retornar ao estágio anterior
+		
+
+======|	#25 - Fiz um commit que não deveria ter sido feito - Descartar último commit
+	$ git reset HEAD^ --hard 
+
+		- faz voltar para o último commit e descarta o primeiro
+	
+
+======| #25 - remover um commit mas não desfazer alterações
+	$ git reset --soft 7573031
+		- Vai apagar o commit 7573031, mas os arquivos alterados vão manter
+		- os arquivos vão ficar no staged
+
+
+==================================================================================
+
+GIT - INTERMEDIÁRIO
+
+==================================================================================
+
+- Um branch nada mais é do que uma ramificação do projeto
+
+
+======| #28 - Criando uma branch
+	$ git branch nomeDaBranch
+
+		Quando cria uma branch, ela traz todos os commits anteriores
+
+======| #28 -  Mudar para outra branch
+	$ git checkout nomeDaBranch
+
+
+======| #28 - Não preciso mais de uma branch, para remover
+	$ git branch -d nomeDaBranch
+	$ git branch -D nomeDaBranch
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+ ======|
+
+======|
+
+======|
+
+======|
+
+======|
+
+ 
