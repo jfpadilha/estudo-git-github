@@ -207,9 +207,9 @@ GIT - INTERMEDIÁRIO
 	$ git checkout nomeDaBranch
 
 
-======| #28 - Não preciso mais de uma branch, para remover
+======| #28 - Removendo uma branch:
 	$ git branch -d nomeDaBranch
-	$ git branch -D nomeDaBranch
+	$ git branch -D nomeDaBranch 
 
 ======|
 
