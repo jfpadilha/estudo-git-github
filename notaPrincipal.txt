@@ -218,7 +218,21 @@ GIT - INTERMEDIÁRIO
 	- Juntar as branchs (merge)
 		$ git merge nomeDaBranchSecundaria
 
-======|
+======| #30 - Rebase
+	- rebase é: refazer a base, base é local onde é criado uma branch
+
+	- Criar uma branch de outra forma (rebase)
+	$ git checkout -b nomeDaBranch (cria a branch e já muda para ela)
+
+	- depois de fazer as alterações dos arquivos e no projeto
+	- agora seria a hora de fazer 'merge' mas:
+
+	$ git checkout master (ir para a branc principal)
+
+		- fazer o 'rebase':
+	$ git rebase nomeDaBranch
+
+
 
 ======|
 
