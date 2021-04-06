@@ -211,7 +211,12 @@ GIT - INTERMEDIÁRIO
 	$ git branch -d nomeDaBranch
 	$ git branch -D nomeDaBranch 
 
-======|
+======| #29 - Merge (unir uma ou mais branch(s))
+	- ir para branch principal:
+		$ git checkout nomeDaBranchPrincipal
+
+	- Juntar as branchs (merge)
+		$ git merge nomeDaBranchSecundaria
 
 ======|
 
