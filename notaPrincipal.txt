@@ -219,7 +219,8 @@ GIT - INTERMEDIÁRIO
 		$ git merge nomeDaBranchSecundaria
 
 ======| #30 - Rebase
-	- rebase é: refazer a base, base é local onde é criado uma branch
+	- rebase é: refazer a base, base é o local onde é criado uma branch
+	- reorganização da base
 
 	- Criar uma branch de outra forma (rebase)
 	$ git checkout -b nomeDaBranch (cria a branch e já muda para ela)
@@ -227,7 +228,7 @@ GIT - INTERMEDIÁRIO
 	- depois de fazer as alterações dos arquivos e no projeto
 	- agora seria a hora de fazer 'merge' mas:
 
-	$ git checkout master (ir para a branc principal)
+	$ git checkout master (ir para a branch principal)
 
 		- fazer o 'rebase':
 	$ git rebase nomeDaBranch
@@ -244,7 +245,32 @@ GIT - INTERMEDIÁRIO
 - git clone "pasta origem" + (.)	-> o ponto é para que seja clonado somente os arquivos
 
 
-======|
+======|#32 - Fetch e pull
+
+- o fetch baixa as atualizações de um repositório remoto, porém não faz o merge (baixa e não merge)
+
+- nesse caso ele fará um "base" no branch ao invés de fazer "merge"
+
+- CASO: em outra pasta é feito clone "git clone ~/pasta/pasta", e é feito alguns commits
+ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
+
+	$ git fetch
+
+- nota-se que ele baixou alguma coisa, mas os arquivos novos do repositorio principal, não aparecem no "ls", isso é o que o "fetch" faz
+- então para que o repositório "clone" seja realmente atualizado com os arquivos precisa-se fazer "git rebase"
+
+	$ git Rebase 	(reorganização da base)
+
+------| Pull
+
+	$ git pull
+
+- é uma junção dos comandos "fath" e "rebase"
+
+
+
+
+
 
 ======|
 
