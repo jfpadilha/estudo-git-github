@@ -265,14 +265,12 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 	$ git pull
 
-- é uma junção dos comandos "fath" e "rebase"
-
-
-
-
+- é uma junção dos comandos "fetch" e "rebase"
 
 
 ======|
+
+- 
 
 ======|
 
