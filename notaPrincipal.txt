@@ -234,7 +234,15 @@ GIT - INTERMEDIÁRIO
 
 
 
-======|
+======| #31 - Clone e Push
+
+- clonar um repositório para outro local:
+- acessar a pasta na qual irá receber a cópia
+
+	$ git clone /home/pasta/pasta .
+
+- git clone "pasta origem" + (.)	-> o ponto é para que seja clonado somente os arquivos
+
 
 ======|
 
