@@ -336,7 +336,104 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 7 - ao voltar a trabalhar no projeto, sempre antes realizar pull para trazer novas alterações que tenham sido enviadas para o rep central por outro desenvolvedor
 
 
-======|
+
+
+======| #34 - Trabalhando com Tags
+
+- Partes entregáveis do projeto, ou seja, o projeto será entregue em partes, para no final todas trabalhar unificadamente
+
+- enquanto isso, entrega-se uma tag para o cliente testar, enquanto trabalha-se em uma nova parte (tag)
+
+- Tag seria uma versão pronta para uso, mesmo que seja uma versão incompleta
+
+- com a tag define-se um estado de um repositório
+
+- gera-se "release" para o projeto
+
+- cada versão do projeto, define-se uma tag
+
+==| Para criar uma tag:
+
+	$ git tag v1.0
+
+	$ git tag (mostra as tags criadas)
+
+- agora precisa-se enviar a tag para o repośitório central:
+	$ git push origin "nomeDaTag"
+
+- "origin" é o repositório remoto
+
+- Consultar algo no ponto da tag:
+	$ git checkout "nomeDaTag"
+
+- estando na tag e quiser criar uma branch a partir deste ponto
+	$ git switch -c "new-Branch-Name"
+
+
+
+
+===| dando continuidade na exemplificação do #33
+
+- Julius e Maria definiram que o que fizeram até agora pode ser considerada a versão 1.0 do projeto
+- Julius critou uma tag versão 1.0
+	$ git tag v1.0
+
+- Maria atualizou seu repositório:
+	$ git pull origin -f (para ver se existem branchs diferentes no rep)
+
+- Maria quer ver como está a versão 1.0
+	$ git checkout v1.0
+
+- neste ponto não se pode realizar commits!!
+- após olhar, maria volta para a branch master
+	$ git checkout master
+
+- Maria encontrou alguns erros na v1.0
+- então vai fazer checkout na v1.0 e criar uma nova branch de correção a partir deste ponto
+	$ git checkout v1.0
+
+- maria já visualiza as dicas do git, cria uma branch a partir do ponto onde ela está
+	$ git switch -c correcoes-v1.0
+
+- agora basta trabalhar nas correções
+
+- feito as correções maria empurra para o repositório
+	$ git push origin correcoes-v1.0
+
+- Julius consulta se existem atualizações
+	$ git pull -force
+
+- Julius visualiza as novas branchs
+	$ git pull origin correcoes-v1.0
+
+- Julius ajuda nas correções após empurra para o repositório
+	$ git push origin correcoes
+
+- Maria vai consultar se existe algo novo no repositório antes de voltar a trabalhar
+	$ git pull -force
+
+- após puxa os arquivos:
+	$ git pull origin correcoes-v1.0
+
+- Maria trabalha no arquivo
+- Maria vai unir o que foi feito
+- para isso deve estar na branch "master"
+	$ git checkout master
+
+- após isso faz a união dos arquivos do projeto
+
+- após empurra os arquivos para o repositório
+	$ git push origin master
+
+- Maria cria uma nova branch com as correções
+	$ git tag v1.1
+
+- Maria envia a tag para o repositório
+	$ git push origin v1.1 (nome-da-tag)
+
+- acessa quem quer e tem acesso
+
+
 
 ======|
 
