@@ -244,6 +244,8 @@ GIT - INTERMEDIÁRIO
 
 - git clone "pasta origem" + (.)	-> o ponto é para que seja clonado somente os arquivos
 
+- Ao fazer push gerou um erro, porque esse não é o repositório "bare", volta a resolução na #33
+
 
 ======|#32 - Fetch e pull
 
@@ -268,9 +270,71 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 - é uma junção dos comandos "fetch" e "rebase"
 
 
-======|
+======|  #33 - Bare e Repository
 
-- 
+- BARE: o git é descentralizado, cada repositório no git é um novo nó na rede, pode-se definir um repositório como sendo o central, onde cada um dos desenvolvedores, cada um com seu repositório local, submete os dados para o central
+
+- Criando o Bare:
+- no local onde será o repositório central:
+
+	$ git init --bare
+
+	ele vai criar diversos arquivos ali, para outra finalidade
+
+
+
+==| exemplificando
+	- criado um projeto
+	- dentro do projeto criado 3 diretórios "desenv-julius", "desenv-maria" e "rep-bare"
+	- dentro do diretório "rep-bare" foi inicializado o bare:
+		$ git init --bare
+	
+	- acessado o diretório do "desenv-julius"
+	- criado um diretório "secao04" e acessado esse diretório
+	- feito clone do repositório central (bare)
+		$ git clone ~/../../rep-bare/ . 
+	- feita a configuração do usuário
+		$ git config user.name ..... e email
+	- adicionado os arquivos do projeto
+	- feito os commits normais (add, commit)
+	- enviado os arquivos para o repositório central (bare)
+		$ git push
+
+	- acessado o diretório da "desenv-maria"
+	- realizado clone do repositório central (bare)
+		$ git clone ~/../../rep-bare/ .
+	- feita a configuração da desenv Maria (git config user.name ... ...)
+	- criado os arquivos do projeto da parte da Maria
+	- realizados todos os commits
+	- enviar para o repositório central (bare)
+		$ git push
+
+
+	
+== | sequencia correta para centralização:
+
+1 - localhost: Criar diretório "rep-bare"
+	ou
+1 - Remoto: Criar repositótio "github" e/ou "bitbucket"
+
+2 - no diretório do desenvolvedor onde será realizado o projeto:
+	- localhost:	$ git clone ~/.../.../repo-bare/ .
+	- remoto: 		$ git clone https:https://github.com/jfpadilha/projetoFulano.git .
+
+	Obs: não esquecer do (.) no final
+
+3 - Se não tiver ainda definido global, então setar configuração do user....
+
+4 - criar os arquivos do projeto
+
+5 - gerar os commits normalmente
+
+6 - Empurrar o desenvolvimento para o rep
+	- localhost:	$ git push
+	- remoto:		$ git push origin nomeDaBranch
+
+7 - ao voltar a trabalhar no projeto, sempre antes realizar pull para trazer novas alterações que tenham sido enviadas para o rep central por outro desenvolvedor
+
 
 ======|
 
