@@ -461,14 +461,13 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 
 
-
 ==== | PS:
 
 - para o git salvar as credenciais de acesso ao bare remoto e não ser solicitado no próximo push, execute seguinte comando:
 	$ git config credential.helper store
 
 
-================|
+================| #39 - Usando git clone e git pull
 
 ================|
 
