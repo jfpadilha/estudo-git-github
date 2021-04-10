@@ -435,40 +435,85 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 
 
-======|
+================| #38 - Criando repositório no gitHub (bare remoto) e sincronizando com local
 
-======|
+- Criar repositório no github 
 
-======|
+- Criar uma pasta local para sincronizar com o bare remoto
 
-======|
+- inicializar o git nesta pasta
+	$ git init
 
-======|
+- identificar o user (caso não tenha ainda --global)
+	$ git config user.name ....... user.email
 
-======|
+- registrar o repositório do github (bare) localmente
+	$ git add origin https://github/.../....git
 
-======|
+- enviar do local para github
+	$ git push -u origingithub
 
-======|
+- atualizar a página web do github, nota-se que os arquivos do local agora estão lá
 
-======|
+- verificar se existe algum repositório remoto registrado ou
+- ver a lista dos repositórios remotos registrados no local
+	$ git remote -v
 
-======|
 
-======|
 
-======|
 
-======|
+==== | PS:
 
- ======|
+- para o git salvar as credenciais de acesso ao bare remoto e não ser solicitado no próximo push, execute seguinte comando:
+	$ git config credential.helper store
 
-======|
 
-======|
+================|
 
-======|
+================|
 
-======|
+================|
 
- 
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+================|
+
+
