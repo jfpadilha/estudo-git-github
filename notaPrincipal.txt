@@ -523,7 +523,27 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 	- abrir aba "Code"
 	- abrir a lista de commits
 
-================| 
+================| #42 - Desfazendo com checkout (voltando estado inicial)
+
+- Feita uma edição no projeto
+- antes do de enviar para o estágio "tracked" (git add .)
+
+- percebe-se que foi feito algo errado, é decidido então revogar o cógido para o original antes da edĩção
+
+	$ git checkout -- .		(menos menos epaço e ponto)
+
+
+==== | Desfazendo apenas um arquivo entre vários modificados:
+	$ git checkout -- fileName.txt 	
+
+
+==== | Voltando um arquivo que já está no tracked (git add .) antes do staged (commit)
+
+	$ git checkout HEAD -- .		(todos os arquivos)
+		OU
+	$ git checkout HEAD -- fileName.txt (apenas o arquivo fileName.txt)
+
+
 
 ================|
 
