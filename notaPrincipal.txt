@@ -469,6 +469,14 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 ================| #39 - Usando git clone e git pull
 
+- clonando um repositório existente no github, baixando no repositório local
+	$ git clone https://github.com/jfpadilha/geek-git1.git .	(.) para não trazer a pasta toda
+
+- "pull" é o comjunto do (fetch + merge)
+	$ git pull origin branchName
+
+
+
 ================|
 
 ================|
