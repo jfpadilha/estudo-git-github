@@ -477,7 +477,39 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 
 
-================|
+================| #40 - Adicionando colaboradores ao seu projeto
+
+- Um desenvolvedor fez clone do meu projeto
+
+- ele consegue ver os commits, criar branchs, adicionar e alterar os arquivos do projeto
+
+- Esse desenv não consegue fazer push, pois não tem permissão no repositório github para enviar arquivos
+
+==== | permitindo usuários no gitHub
+
+- Acesso sua conta no gitHub
+
+- abra o projeto
+
+- acesse "Settings"
+
+- acesse "Manage access"
+
+- clique em "Invite a collaborator"
+
+- insira  e-mail do colaborador
+
+- agora o colaborador precisa acessar seu email e abrir o link que lhe foi enviado
+
+- o colaborador abriu o link que recebeu do github, deve clicar em "View invitation" e clicar em "Acept invitation"
+
+- Após isso o novo colaborador possui permissão para fazer push no projeto
+
+- Para adicionar mais colaboradores, basta reiniciar todo esse processo
+
+- No github, pode-se adicionar uma quantidade ilimitada para projetos públicos e máximo 3 pessoas em repositórios privados (conta gratuita)
+
+
 
 ================|
 
