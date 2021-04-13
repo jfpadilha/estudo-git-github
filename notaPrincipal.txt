@@ -511,9 +511,19 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 
 
-================|
+================| #41 - Consultando o histórico de commits
 
-================|
+- No repositório local para consultar a lista dos commits
+	$ git log 	(mostra a lista dos commits em formato normal)
+	$ git log --oneline 		(mostra os commits de forma resumida)
+
+
+- No github:
+	- acesse o projeto
+	- abrir aba "Code"
+	- abrir a lista de commits
+
+================| 
 
 ================|
 
