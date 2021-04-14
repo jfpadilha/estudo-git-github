@@ -545,7 +545,53 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 
 
-================|
+================| #43 - Desfazendo com Revert e Reset
+
+==== | Revert - como e quando usar
+
+- adicionada uma linha de código em um arquivo
+- realizado um commit
+
+	$ git revert <commit-Id-Old>
+
+- o git cria um novo commit com novo id E
+- remove a linha adicionada no commit de cima
+
+-- é o mesmo processo que editar o mesmo arquivo, remover o código adicionado anteriormente, e efetuar outro commit, mas, desse modo, usando "revert" teremos todo o histórico do processo, navegando entre os commits
+
+
+-----> Na prática:
+
+- após commitar vamos reverter
+	$ git revert fd14d80
+
+- o git irá abrir um editor de texto (vim), então salva-se esse arquivo após isso sair
+- se for no vim usar o comando ":wq"
+- revert realizado!
+
+- pode-se fazer o push
+
+
+
+==== | Reset - como e quando usar
+
+- feito seus ajustes no projeto e realizado o commit
+- se faz necessário desfazer o código, bem como o commit, já que não pretende deixar esse processo nos logs do git
+- então nesse caso pode-se utilizar o "reset"
+
+	$ git reset HEAD~1	(o último número, é referente a quantidade de commits que se deseja voltar)
+
+- após isso, a quantidade de commits foi desfeito e os arquivos volta para o estagio "modified"
+- agora pode-se fazer as alterações manuais, ou voltar o código ao original ($ git checkout -- .)
+
+- Ao realizar push, poderá mostrar o seguinte erro:
+	"error: failed to push some refs to 'https://github.com/youraccount/yourproject.git'"
+
+- significa que no github/bitbucket está diferente do repositório local,
+- faz-se necessário rodar um "pull" para somente após realizar o "push"
+
+
+
 
 ================|
 
