@@ -469,8 +469,13 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 ================| #39 - Usando git clone e git pull
 
+--> para clonar não é necessário inicializar o repositório "git init"
+
 - clonando um repositório existente no github, baixando no repositório local
 	$ git clone https://github.com/jfpadilha/geek-git1.git .	(.) para não trazer a pasta toda
+
+- após clonar
+	$ git config user.name "name" ...........
 
 - "pull" é o comjunto do (fetch + merge)
 	$ git pull origin branchName
@@ -591,6 +596,26 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 - faz-se necessário rodar um "pull" para somente após realizar o "push"
 
 
+
+================| #44 - Resolvendo conflitos
+
+=== | Case 1: 
+	- o desenv 1 alterou o código, salvou tudo e fez todos os commits
+	- o desenv 2 fez seu trabalho no seu repositório local, salvou e ao commitar ocorreu o erro:
+	-> "failed to push some refs to https://github.com/ etc etc etc"
+
+	Causa: --> o repositório bare (central ou github) possui alterações nas quais o desenv 2 não baixou para seu repositório, antes de trabalhar, 
+
+	Resolução: --> fazer $ git pull
+	-porém se o desenv 2 editou o mesmo arquivo que o desenv 1 irá ocorrer conflitos
+
+	- Resolução: Se ocorrer erros de conlito, abre-se o arquivo, e remove-se as marcações que o git inseriu no código
+
+	- Agora basta dar continuidade no projeto:
+		$ git status	(para checagem)
+		$ git push
+		$ git commit -m
+		$ git push oringin remote
 
 
 ================|
