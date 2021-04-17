@@ -618,7 +618,38 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 		$ git push oringin remote
 
 
-================|
+================| #45 - Conflitos com Merge
+
+- primeiramente, conflito não é comum, se ocorrrer existem erros na divisão das tarefas
+
+- quando 2 ou mais desenvs alteram o mesmo arquivo, ficam "conflitos em anerto"
+
+- Basta configurar da melhor forma, após pode-se 
+
+== | resolvendo:
+- ao editar o código de algum arquivo
+	$ git add . -> $ git commit -m "coments" -> $ git push origin master
+
+- na sequencia ao fazer push com o comando:
+	$ git push -u origin master
+
+- vai dar o erro:
+"Failed to push, some ref to tth...."
+
+- então realizar primeiramente:
+	$ git pull origin master
+	
+- vai fazer pull mas ao mesmo tempo vai mostrar que possui erros
+
+- o git irá marcar o arquivo com os conflitos encontrados
+
+- remover os sinais que ficaram no commit
+
+=== | recomeçar 
+	$ git status (e veja as alterações)
+	$ git push origin master
+
+
 
 ================|
 
