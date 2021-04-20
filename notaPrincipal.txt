@@ -469,13 +469,8 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 ================| #39 - Usando git clone e git pull
 
---> para clonar não é necessário inicializar o repositório "git init"
-
 - clonando um repositório existente no github, baixando no repositório local
 	$ git clone https://github.com/jfpadilha/geek-git1.git .	(.) para não trazer a pasta toda
-
-- após clonar
-	$ git config user.name "name" ...........
 
 - "pull" é o comjunto do (fetch + merge)
 	$ git pull origin branchName
@@ -519,8 +514,21 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 ================| #41 - Consultando o histórico de commits
 
 - No repositório local para consultar a lista dos commits
-	$ git log 	(mostra a lista dos commits em formato normal)
-	$ git log --oneline 		(mostra os commits de forma resumida)
+
+	$ git reflog
+
+	$ git log 				(mostra a lista dos commits em formato normal)
+	$ git log --oneline 	(mostra os commits de forma resumida)
+	$ git log -para 		(mostra o que foi alterado no arquivo e adicionado no commit)
+	$ git log -p -2		 	(mostra o que foi alterado nos últimos 2 commits)
+	$ git log -p file.txt 	(mostra as alterações do arquivo chamdo file.txt)
+	$ git log --merges 	(mostra apenas os commits de merge)
+
+==== | Git show
+	$ git show				(mostra detalhes do último commit)
+	$ git show 1.4			(mostra o commit da tag nomeada 1.4)
+	$ git show master		(mostra o último commit da branch master)
+	$ git show-branch		(mostra o último commit da branch master)
 
 
 - No github:
@@ -562,7 +570,7 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 - o git cria um novo commit com novo id E
 - remove a linha adicionada no commit de cima
 
--- é o mesmo processo que editar o mesmo arquivo, remover o código adicionado anteriormente, e efetuar outro commit, mas, desse modo, usando "revert" teremos todo o histórico do processo, navegando entre os commits
+-- é o mesmo processo que editar o mesmo arquivo, remover o código adicionado anteriormente, e efetuar outro commit, mas, desse modo, usando "revert" teremos todo o histórico do processo, navegando entre os commitos
 
 
 -----> Na prática:
@@ -584,7 +592,7 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 - se faz necessário desfazer o código, bem como o commit, já que não pretende deixar esse processo nos logs do git
 - então nesse caso pode-se utilizar o "reset"
 
-	$ git reset HEAD~1	(o último número, é referente a quantidade de commits que se deseja voltar)
+	$ git reset --soft HEAD~1	(o último número, é referente a quantidade de commits que se deseja voltar)
 
 - após isso, a quantidade de commits foi desfeito e os arquivos volta para o estagio "modified"
 - agora pode-se fazer as alterações manuais, ou voltar o código ao original ($ git checkout -- .)
@@ -596,26 +604,6 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 - faz-se necessário rodar um "pull" para somente após realizar o "push"
 
 
-
-================| #44 - Resolvendo conflitos
-
-=== | Case 1: 
-	- o desenv 1 alterou o código, salvou tudo e fez todos os commits
-	- o desenv 2 fez seu trabalho no seu repositório local, salvou e ao commitar ocorreu o erro:
-	-> "failed to push some refs to https://github.com/ etc etc etc"
-
-	Causa: --> o repositório bare (central ou github) possui alterações nas quais o desenv 2 não baixou para seu repositório, antes de trabalhar, 
-
-	Resolução: --> fazer $ git pull
-	-porém se o desenv 2 editou o mesmo arquivo que o desenv 1 irá ocorrer conflitos
-
-	- Resolução: Se ocorrer erros de conlito, abre-se o arquivo, e remove-se as marcações que o git inseriu no código
-
-	- Agora basta dar continuidade no projeto:
-		$ git status	(para checagem)
-		$ git push
-		$ git commit -m
-		$ git push oringin remote
 
 
 ================| #45 - Conflitos com Merge
