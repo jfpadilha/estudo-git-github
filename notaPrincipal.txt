@@ -639,7 +639,32 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 
 
-================|
+================| 50. Trabalhando com Issues
+
+---| parte 1
+
+- No github abra o projeto
+- Clicar em "issues"
+- ali pode-se abrir um protocolo para ajuste de algum item do projeto, como um ticket
+- Na hora de abrir, basta informar um título para o ticket, e informar o descritivo do chamado.
+
+
+---| Parte 2
+
+- pelo terminal acessar o projeto
+- alterar o(s) arquivo(s) conforme ajuste solicitado na issue
+	$ git add .
+	$ git commit -m "Mensagem do commit. Closes #1"		
+		-> assim encerra-se a issue com "Closes" + "#1" que é o número da issue
+
+===== | Dica sobre issu
+
+	- Crie seu projeto
+	- Abra a tela "issues"
+	- Crie ali dentro todas as tarefas
+	- Assim que vá resolvendo vai commitando o projeto
+
+
 
 ================|
 
