@@ -557,6 +557,11 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 	$ git checkout HEAD -- fileName.txt (apenas o arquivo fileName.txt)
 
 
+==== | Adicionado arquivo(s) no staged (git add .) agora preciso retorná-lo para untracked:
+
+	$ git restore --staged fileName.txt
+
+
 
 ================| #43 - Desfazendo com Revert e Reset
 
@@ -672,7 +677,10 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 
 
-================|
+================| #52 - sobre Pull Request
+
+- Requisição de pull:
+	É fazer uma solicitação para o dono do projeto original, para que o mesmo avalie seu código e insira o mesmo no projeto original.
 
 ================|
 
