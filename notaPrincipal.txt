@@ -157,10 +157,10 @@
 	$ git commit --amend -m "Inserção de arquivo que faltou"
 
 
-======| #25 - tirando arquivos de staged
-	$ git restore --staged arquivo.txt
+======| #25 - tirando arquivos de staged (git add)
+	$ git restore --staged fileName.txt
 	$ git restore --staged (desse modo vai retonar com todos os arquivos do staged)
-	- vai voltar o arquivo para 'tracked' ou 'untracked'
+	- vai voltar o arquivo para  ou 'untracked'
 
 
 ======| #25 - feita uma alteração indevida em um arquivo pronto
@@ -180,7 +180,7 @@
 ======|	#25 - Fiz um commit que não deveria ter sido feito - Descartar último commit
 	$ git reset HEAD^ --hard 
 
-		- faz voltar para o último commit e descarta o primeiro
+		- faz voltar para o último commit e descarta o primeiro, descartando também o código (atenção!)
 	
 
 ======| #25 - remover um commit mas não desfazer alterações
@@ -541,7 +541,11 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 - Feita uma edição no projeto
 - antes do de enviar para o estágio "tracked" (git add .)
 
-- percebe-se que foi feito algo errado, é decidido então revogar o cógido para o original antes da edĩção
+- percebe-se que foi feito algo errado, é decidido então revogar o cógido para o original antes da edição
+- caso o arquivo já estaja em staged faz-se necessário:
+	$ git restore --staged fileName.txt
+
+		e então
 
 	$ git checkout -- .		(menos menos epaço e ponto)
 
@@ -555,12 +559,6 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 	$ git checkout HEAD -- .		(todos os arquivos)
 		OU
 	$ git checkout HEAD -- fileName.txt (apenas o arquivo fileName.txt)
-
-
-==== | Adicionado arquivo(s) no staged (git add .) agora preciso retorná-lo para untracked:
-
-	$ git restore --staged fileName.txt
-
 
 
 ================| #43 - Desfazendo com Revert e Reset
