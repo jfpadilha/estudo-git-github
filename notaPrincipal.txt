@@ -666,7 +666,11 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 
 
-================|
+================| #51 - Fork
+
+- Basicamente: o Fork é obter uma "cópia" de um outro projeto para seu repositório, para que se modifique ou se dê continuidade no projeto
+
+
 
 ================|
 
