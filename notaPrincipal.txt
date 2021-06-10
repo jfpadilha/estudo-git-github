@@ -181,6 +181,11 @@
 		-- acessa o arquivo no último commit
 	$ git status 	(nota-se que os arquivos estão como antes)
 
+	ou
+
+	$ git restore fileName.txt 
+		ou use ( . ) para todos os arquivos
+
 	- usar checkout arquivo por arquivo
 
 
@@ -695,7 +700,38 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 ================|
 
-================|
+
+================| #53
+
+
+====================================================
+Dica de inicialização de 2 formas:
+====================================================
+
+-----| Create a new repository on the command line
+
+echo "# Nome-do-Projeto" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/jfpadilha/Marketing-digital.git
+git push -u origin master
+
+
+
+-----| push an existing repository from the command line
+
+git remote add origin https://github.com/jfpadilha/Marketing-digital.git
+git branch -M master
+git push -u origin master
+
+
+-----| import code from another repository
+
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
 
 ================|
 
