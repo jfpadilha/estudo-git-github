@@ -733,7 +733,13 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
 
 
 
-================|
+================| Salvar token github para não precisar inserir token/senha toda hora:
+
+-- ao fazer push, informar login e token, após executar o comando abaixo
+
+$ git config --global credential.helper cache
+
+
 
 ================|
 
