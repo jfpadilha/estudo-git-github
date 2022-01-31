@@ -1,8 +1,9 @@
 GIT & GITHUB
 ====
-Estudo git-github, focado em  controle de versão com git, ferramenta essa essencial para desenvolvedores, aqui tambpem fica a práica de subir/baixar os arquivos do projeto juntamente com o versionamento para github. 
-Este estudo ficará aqui disponível para consulta em formato de manual prático e rápido. <br>
-![](resources/gitimg2.jpg) <br>
+Estudo git-github, focado em  controle de versão com git, ferramenta essa essencial para desenvolvedores, aqui também fica a práica de subir/baixar os arquivos do projeto juntamente com o versionamento para github. 
+Este estudo ficará aqui disponível para consulta em formato de manual prático e rápido. <br><br>
+
+![](img.jpg) <br>
 ***
 #### Existem 4 estágios em que um arquivo pode estar quando faz parte de um projeto:
 
@@ -68,16 +69,16 @@ Este estudo ficará aqui disponível para consulta em formato de manual prático
 #### Localizando commits
 ``` shell
 	$ git log vai mostrar uma lista enorme dos commits
-		- vai mostra abaixo no final da página o sinal ":" 
-		- nesse momento pressionar / + 'nome de busca' Ex.: /code.html
-		- o git vai buscar o commit onde existe o arquivo "code.html"
+# vai mostra abaixo no final da página o sinal ":" 
+# nesse momento pressionar / + 'nome de busca' Ex.: /code.html
+# o git vai buscar o commit onde existe o arquivo "code.html"
 ```
 
 #### Alterar comportamento ao mostrar a lista no "git log"
 ``` shell
 	$ git config core.pager cat
-		- conferir arquivo ".git/config"
-		- a partir de agora não vai mostar mais o ":" e vai listar completamente**
+# conferir arquivo ".git/config"
+# a partir de agora não vai mostar mais o ":" e vai listar completamente**
 ```
 
 #### Desfazer comportamento para mostrar a lista logs com ":" e busca
@@ -87,88 +88,88 @@ Este estudo ficará aqui disponível para consulta em formato de manual prático
 
 #### Fazendo mais com comando "git log"
 ``` shell
+# mostrar os três últimos logs
 	$ git log -3
-		- mostra os três últimos logs
 
+# mostra cada log em uma linha também mostra o resumo do hash
 	$ git log --oneline
-		- mostra cada log em uma linha também mostra o resumo do hash
-
+		
+# mostra os três últimos cada commit em uma linha
 	$ git log -3 --oneline 
-		- mostra os três últimos cada commit em uma linha
+		
 ```
 
 #### Pesquisando commits no "git log"
 ``` shell
+# mostra logs anterior a 30-03-2021
 	$ git log --before=2021-03-30
-		- mostra logs anterior a 30-03-2021
 
+# mostra logs após 30-03-2021
 	$ git log --after=2021-03-30
-		- mostra logs após 30-03-2021
 
+# mostra os logs de 7 dias atras
 	$ git log --since="7 days ago"
-		- mostra os logs de 7 dias atras
 
+# mostra logs de 1 mês atras
 	$ git log --before="1 month ago"
-		- mostra logs de 1 mês atras
 ```
 
 #### Voltando no tempo, visualizar tempo passado
 ``` shell
+# volta no commit '4ff58d9'
 	$ git checkout 4ff58d9
-		- volta no commit '4ff58d9'
-
-	$ git checkout master 
-		- para voltar ao 'HEAD' mais alto
+		
+# para voltar ao 'HEAD' mais alto
+	$ git checkout master		
 ```
 
 #### Renomear arquivo
 ``` shell
+# renomar arquivo de file1.txt para file10.txt
 	$ git mv file1.txt file10.txt
-		- renomar arquivo de file1.txt para file10.txt
+		
 ```
 
 #### Renomear arquivo diretamente pela pasta
-```
-	- ele vai deletar o original e criar uma cópia com nome novo
-```
-
+- ele vai deletar o original e criar uma cópia com nome novo
 #### Removendo arquivos
 ``` shell
 	$ git rm arquivo.txt
 ```
 
 #### Dica
-``` shell
-	"Faça pequenos commits!"
-```
+_"Faça pequenos commits!"_
+
 
 #### Checando a diferença entre arquivos no "staged"
 ``` shell
-	$ git diff --staged
+	$ git diff --staged # somente após incluí-los no staged
 ```
 
 #### Checando a diferença entre o HEAD e algum outro commit antigo
 ``` shell
-$ git diff 3d9d4cb
-	- mostra  a diferença entre o HEAD até o commit 3d9d4cb (antigo)
+# mostra  a diferença entre o HEAD até o commit 3d9d4cb (antigo)
+	$ git diff 3d9d4cb
+
 ```
 
 #### Checar a diferença entre o commit atual e um outro antigo
 ``` shell
-$ git diff 3d9d4cb..5a886ad
-	- checar a diferença entre o commit 'cb'(mais antigo) até 'ad' (mais novo)
+# checar a diferença entre o commit 'cb'(mais antigo) até 'ad' (mais novo)
+	$ git diff 3d9d4cb..5a886ad
+
 ```
 
 #### Corrigindo mensagem de commit
-```
+```shell
 	$ git commit --amend -m "Nova mensagem corrigida"
 ```
 
 #### Feito commit mas faltou criar ou adicionar um arquivo novo
 ``` shell
-	- crie o arquivo novo
+# crie o arquivo novo
 	$ git add .
-	$ git commit --amend -m "Inserção de arquivo que faltou"
+	$ git commit --amend -m "Comentario sobre o commit"
 
 	$ git push --force originthub master
 ```
@@ -177,57 +178,49 @@ $ git diff 3d9d4cb..5a886ad
 ```	 shell
 	$ git restore --staged fileName.txt
 	$ git restore --staged (desse modo vai retonar com todos os arquivos do staged)
-		- vai voltar o arquivo para  ou 'untracked'
+# vai voltar o arquivo para 'untracked'
 ```
-
 
 #### Feita uma alteração indevida em um arquivo pronto
 ``` shell
+# acessa o arquivo no último commit
 	$ git checkout arquivo.html
-		-- acessa o arquivo no último commit
-	$ git status 	(nota-se que os arquivos estão como antes)
+	$ git status 	# (nota-se que os arquivos estão como antes)
 
-	ou
+# ou
 
 	$ git restore fileName.txt 
-		ou use ( . ) para todos os arquivos
-
-	- usar checkout arquivo por arquivo
+# ou use ( . ) para todos os arquivos
+# usar checkout arquivo por arquivo
 ```
 
 #### Remover um commit que foi feito
 ``` shell
 	$ git reset HEAD --hard
-		- head é o último estágio do commit
-		- então vai resetar todas as alterações e retornar ao estágio anterior
+# head é o último estágio do commit
+# então vai resetar todas as alterações e retornar ao estágio anterior
 ```
 
 #### Fiz um commit que não deveria ter sido feito - Descartar último commit
 ``` shell
-$ git reset HEAD^ --hard 
+	$ git reset HEAD^ --hard 
 
-		- faz voltar para o último commit e descarta o primeiro, descartando também o código (atenção!)
+# faz voltar para o último commit e descarta o primeiro, descartando também o código (atenção!)
 ```
 
 
 #### Remover um commit mas não desfazer alterações
 ``` shell
 	$ git reset --soft 7573031
-		- Vai apagar o commit 7573031, mas os arquivos alterados vão manter
-		- os arquivos vão ficar no staged
+# Vai apagar o commit 7573031, mas os arquivos alterados vão manter
+# os arquivos vão ficar no staged
 ```
-<br>
-
-
-***
-## GIT - INTERMEDIÁRIO
-***
-*** <mark>Um branch nada mais é do que uma ramificação do projeto</mark>***
 
 #### Criando uma branch
+*** <mark>Um branch nada mais é do que uma ramificação do projeto</mark>***
 ``` shell
 	$ git branch nomeDaBranch
-		- Quando cria uma branch, ela traz todos os commits anteriores
+# Quando cria uma branch, ela traz todos os commits anteriores
 ```
 
 #### Mudar para outra branch
@@ -243,27 +236,26 @@ $ git reset HEAD^ --hard
 
 #### Merge <sub>*(unir uma ou mais branch(s))*</sub>
 ``` shell
+# ir para branch principal:
 	$ git checkout nomeDaBranchPrincipal
-		- ir para branch principal:
 
+# Juntar as branchs (merge)
 	$ git merge nomeDaBranchSecundaria
-		- Juntar as branchs (merge)
+
 ```
 
 #### Rebase
 ``` shell
-		- rebase é: refazer a base, base é o local onde é criado uma branch
-		- reorganização da base
+# rebase é: refazer a base, base é o local onde é criado uma branch
+# reorganização da base
 
-		- Criar uma branch de outra forma (rebase)
+# Criar uma branch de outra forma (rebase)
 	$ git checkout -b nomeDaBranch (cria a branch e já muda para ela)
 
-		- depois de fazer as alterações dos arquivos e no projeto
-		- agora seria a hora de fazer 'merge' mas:
-
-	$ git checkout master (ir para a branch principal)
-
-		- fazer o 'rebase':
+# depois de fazer as alterações dos arquivos e no projeto
+# agora seria a hora de fazer 'merge' mas:
+	$ git checkout master # (ir para a branch principal)
+# fazer o 'rebase':
 	$ git rebase nomeDaBranch
 ```
 
@@ -273,7 +265,7 @@ $ git reset HEAD^ --hard
 - acessar a pasta na qual irá receber a cópia
 ``` shell
 	$ git clone /home/pasta/pasta .
-		#ou seja
+#ou seja
 	$ git clone "pasta origem" + (.)	#-> o ponto é para que seja clonado somente os arquivos
 ```
 
@@ -309,34 +301,34 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 ```
 #### Exemplificando
 ```shell 
-	# criado um projeto
-	# dentro do projeto criado 3 diretórios "desenv-julius", "desenv-maria" e "rep-bare"
-	# dentro do diretório "rep-bare" foi inicializado o bare:
+# criado um projeto
+# dentro do projeto criado 3 diretórios "desenv-julius", "desenv-maria" e "rep-bare"
+# dentro do diretório "rep-bare" foi inicializado o bare:
 	
-		$ git init --bare
+	$ git init --bare
 	
-	# acessado o diretório do "desenv-julius"
-	# criado um diretório "secao04" e acessado esse diretório
-	# feito clone do repositório central (bare)
-		$ git clone ~/../../rep-bare/ .
-		
-	# feita a configuração do usuário
-		$ git config user.name ..... e email
-		
-	# adicionado os arquivos do projeto
-	# feito os commits normais (add, commit)
-	# enviado os arquivos para o repositório central (bare)
-		$ git push
+# acessado o diretório do "desenv-julius"
+# criado um diretório "secao04" e acessado esse diretório
+# feito clone do repositório central (bare)
+	$ git clone ~/../../rep-bare/ .
 
-	# acessado o diretório da "desenv-maria"
-	# realizado clone do repositório central (bare)
-		$ git clone ~/../../rep-bare/ .
-		
-	# feita a configuração da desenv Maria (git config user.name ... ...)
-	# criado os arquivos do projeto da parte da Maria
-	# realizados todos os commits
-	# enviar para o repositório central (bare)
-		$ git push
+# feita a configuração do usuário
+	$ git config user.name ..... e email
+
+# adicionado os arquivos do projeto
+# feito os commits normais (add, commit)
+# enviado os arquivos para o repositório central (bare)
+	$ git push
+
+# acessado o diretório da "desenv-maria"
+# realizado clone do repositório central (bare)
+	$ git clone ~/../../rep-bare/ .
+
+# feita a configuração da desenv Maria (git config user.name ... ...)
+# criado os arquivos do projeto da parte da Maria
+# realizados todos os commits
+# enviar para o repositório central (bare)
+	$ git push
 ```
 
 	
