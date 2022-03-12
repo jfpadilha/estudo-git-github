@@ -661,6 +661,10 @@ $ git remote add origin https://github.com/username/nomeDoProjeto.git
 $ git branch -M master
 $ git push -u origin master
 ```
+###### Forma 3
+```shell
+$ git pull -f origin master # irá forçar a baixar a branch master, para isso primeiro criar o repositorio no github
+```
 
 #### Salvar token github para não precisar inserir token/senha toda hora:
 ```shell
