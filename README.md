@@ -25,6 +25,35 @@ Este estudo ficará aqui disponível para consulta em formato de manual prático
 - commited : não foram modificados desde o ultimo commit;
 
 
+# --------------------------------------------------------------------|
+
+ 
+#### Criando repositório no gitHub (bare remoto) e sincronizando com local
+```shell
+# Criar repositório no github
+# Criar uma pasta local para sincronizar com o bare remoto
+# inicializar o git nesta pasta
+	$ git init
+
+# identificar o user (caso não tenha ainda --global)
+	$ git config user.name ....... user.email
+
+# registrar o repositório do github (bare) localmente
+	$ git add origin https://github/.../....git
+
+# Adicionar arquivos para o primeiro commit
+        $ git add .
+
+# realizar o primeiro commit
+        $ git commit -a -m "primeiro commit"
+
+# enviar do local para github
+	$ git push origingithub master
+
+# -------------------------------------------------------------------- |
+
+
+
 
 #### Ciclo
 - Ao iniciar "git init" entra no "Untracked".
@@ -431,22 +460,6 @@ ao fazer "push" ocorreu erro, então nessa pasta clone, fiz "git fetch"
 
 # acessa quem quer e tem acesso
 ```
-
-#### Criando repositório no gitHub (bare remoto) e sincronizando com local
-```shell
-# Criar repositório no github
-# Criar uma pasta local para sincronizar com o bare remoto
-# inicializar o git nesta pasta
-	$ git init
-
-# identificar o user (caso não tenha ainda --global)
-	$ git config user.name ....... user.email
-
-# registrar o repositório do github (bare) localmente
-	$ git add origin https://github/.../....git
-
-# enviar do local para github
-	$ git push -u origingithub
 
 # atualizar a página web do github, nota-se que os arquivos do local agora estão lá
 
