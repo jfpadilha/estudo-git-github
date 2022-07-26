@@ -685,5 +685,12 @@ $ git pull -f origin master # irá forçar a baixar a branch master, para isso p
 	$ git config --global credential.helper cache
 ```
 <br>
+#### Quando incluir uma pasta no ".gitignore", mas ela continua sendo mostrada no status
+# deve-se remover este arquivo/diretorio do cache
+```shell
+$ git rm -r --cached file_name      # para arquivo
+$ git rm -r --cached folder_name    # para diretório
+```
+
 
 <sub>_Vem mais conteúdo por aí..._</sub>
