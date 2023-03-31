@@ -684,12 +684,23 @@ $ git pull -f origin master # irá forçar a baixar a branch master, para isso p
 # ao fazer push, informar login e token, após executar o comando abaixo:
 	$ git config --global credential.helper cache
 ```
-<br>
+
 #### Quando incluir uma pasta no ".gitignore", mas ela continua sendo mostrada no status
 # deve-se remover este arquivo/diretorio do cache
 ```shell
 $ git rm -r --cached file_name      # para arquivo
 $ git rm -r --cached folder_name    # para diretório
+```
+
+#### Quando vai realizar push mas ocorre erro de que existe nova versão no remote mas não localmente:
+
+```shell
+$ git pull origin master --rebase
+```
+após realizar o push
+
+```shell
+$ git push origin master
 ```
 
 
