@@ -237,6 +237,13 @@ _"Faça pequenos commits!"_
 # faz voltar para o último commit e descarta o primeiro, descartando também o código (atenção!)
 ```
 
+#### Fiz um commit que não deveria ter sido feito - Descartar último commit
+``` shell
+	$ git reset HEAD^ --soft 
+
+# faz voltar para o último commit e mantém os arquivos
+```
+
 
 #### Remover um commit mas não desfazer alterações
 ``` shell
